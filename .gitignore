@@ -48,6 +48,3 @@ Backup*
 **/*.dep
 **/*.ewd
 **/*.ewt
-
-# Project files 
-**/port

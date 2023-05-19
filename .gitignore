@@ -47,6 +47,7 @@ Backup*
 # IAR .dep files
 **/*.dep
 **/*.ewd
+**/*.ewt
 
 # Project files 
 **/port

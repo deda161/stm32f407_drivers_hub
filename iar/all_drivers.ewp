@@ -32,11 +32,11 @@
                 </option>
                 <option>
                     <name>Input description</name>
-                    <state></state>
+                    <state>Automatic choice of formatter, without multibyte support.</state>
                 </option>
                 <option>
                     <name>Output description</name>
-                    <state></state>
+                    <state>Automatic choice of formatter, without multibyte support.</state>
                 </option>
                 <option>
                     <name>GOutputBinary</name>
@@ -44,7 +44,7 @@
                 </option>
                 <option>
                     <name>OGCoreOrChip</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>GRuntimeLibSelect</name>
@@ -58,7 +58,7 @@
                 </option>
                 <option>
                     <name>RTDescription</name>
-                    <state></state>
+                    <state>Use the normal configuration of the C/C++ runtime library. No locale interface, C locale, no file descriptor support, no multibytes in printf and scanf, and no hex floats in strtod.</state>
                 </option>
                 <option>
                     <name>OGProductVersion</name>
@@ -66,7 +66,7 @@
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
-                    <state></state>
+                    <state>8.40.2.22864</state>
                 </option>
                 <option>
                     <name>GeneralEnableMisra</name>
@@ -78,7 +78,7 @@
                 </option>
                 <option>
                     <name>OGChipSelectEditMenu</name>
-                    <state></state>
+                    <state>STM32F407VG	ST STM32F407VG</state>
                 </option>
                 <option>
                     <name>GenLowLevelInterface</name>
@@ -86,7 +86,7 @@
                 </option>
                 <option>
                     <name>GEndianModeBE</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>OGBufferedTerminalOutput</name>
@@ -112,12 +112,12 @@
                 </option>
                 <option>
                     <name>RTConfigPath2</name>
-                    <state></state>
+                    <state>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</state>
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
                     <version>27</version>
-                    <state>38</state>
+                    <state>39</state>
                 </option>
                 <option>
                     <name>OGUseCmsis</name>
@@ -134,21 +134,21 @@
                 <option>
                     <name>CoreVariant</name>
                     <version>27</version>
-                    <state>38</state>
+                    <state>39</state>
                 </option>
                 <option>
                     <name>GFPUDeviceSlave</name>
-                    <state>-</state>
+                    <state>STM32F407VG	ST STM32F407VG</state>
                 </option>
                 <option>
                     <name>FPU2</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>4</state>
                 </option>
                 <option>
                     <name>NrRegs</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>NEON</name>
@@ -157,7 +157,7 @@
                 <option>
                     <name>GFPUCoreSlave2</name>
                     <version>27</version>
-                    <state>38</state>
+                    <state>39</state>
                 </option>
                 <option>
                     <name>OGCMSISPackSelectDevice</name>
@@ -198,7 +198,7 @@
                 </option>
                 <option>
                     <name>DSPExtension</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>TrustZone</name>
@@ -220,7 +220,8 @@
                 <debug>1</debug>
                 <option>
                     <name>CCDefines</name>
-                    <state></state>
+                    <state>STM32F407xx
+</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -329,7 +330,7 @@
                 </option>
                 <option>
                     <name>OutputFile</name>
-                    <state></state>
+                    <state>$FILE_BNAME$.o</state>
                 </option>
                 <option>
                     <name>CCLibConfigHeader</name>
@@ -345,7 +346,12 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
-                    <state></state>
+                    <state>$PROJ_DIR$\..\src</state>
+                    <state>$PROJ_DIR$\..\src\core</state>
+                    <state>$PROJ_DIR$\..\src\core\CMSIS</state>
+                    <state>$PROJ_DIR$\..\src\core\CMSIS_CORE</state>
+                    <state>$PROJ_DIR$\..\src\port</state>
+                    <state>$PROJ_DIR$\..\src\gpio_driver</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -704,7 +710,7 @@
                 </option>
                 <option>
                     <name>IlinkOutputFile</name>
-                    <state>###Unitialized###</state>
+                    <state>all_drivers.out</state>
                 </option>
                 <option>
                     <name>IlinkDebugInfoEnable</name>
@@ -2103,4 +2109,28 @@
             <data />
         </settings>
     </configuration>
+    <group>
+        <name>core</name>
+        <group>
+            <name>CMSIS</name>
+            <file>
+                <name>$PROJ_DIR$\..\src\core\CMSIS\system_stm32f4xx.c</name>
+            </file>
+        </group>
+    </group>
+    <group>
+        <name>gpio</name>
+        <file>
+            <name>$PROJ_DIR$\..\src\gpio_driver\gpio.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\gpio_driver\gpio.h</name>
+        </file>
+    </group>
+    <file>
+        <name>$PROJ_DIR$\..\src\main.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\..\src\main.h</name>
+    </file>
 </project>

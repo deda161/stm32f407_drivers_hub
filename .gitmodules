@@ -1,0 +1,6 @@
+[submodule "src/core"]
+	path = src/core
+	url = git@github.com:deda161/core.git
+[submodule "src/gpio_driver"]
+	path = src/gpio_driver
+	url = git@github.com:deda161/gpio_driver.git

@@ -1,19 +1,28 @@
 #include "stm32f407xx.h"
 
 #include "gpio.h"
+#include "rcc.h"
+
+#include <limits.h>
 
 void main()
 {
-	SystemInit();
+	clocks_configure();
 	SystemCoreClockUpdate();
 
 	SysTick_Config(SystemCoreClock / 1000);
 
 	// configure GREEN LED
-	GPIO_Config_s gpio_a = GPIO_DEFAULT_OUTPUT(GPIOD, PIN_12);
-	uint8_t res = gpio_configure(&gpio_a);
+	gpio_configure(GPIOD,
+                   PIN_12,
+                   GPIO_Mode_Output,
+                   GPIO_OutputType_PushPull,
+                   GPIO_Speed_Medium,
+                   GPIO_PUPD_PullUp);
 
-	gpio_set_output_state(GPIOD, PIN_12, GPIO_State_SET);
+	gpio_setPin(GPIOD, PIN_12, GPIO_State_SET);
+
+	uint8_t state = gpio_get_out_state(GPIOD, PIN_12);
 
 	// configure User Button
 	//gpio_configure();

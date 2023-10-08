@@ -4,3 +4,12 @@
 [submodule "src/gpio_driver"]
 	path = src/gpio_driver
 	url = git@github.com:deda161/gpio_driver.git
+[submodule "src/rcc_driver"]
+	path = src/rcc_driver
+	url = git@github.com:deda161/rcc_driver.git
+[submodule "src/usart_driver"]
+	path = src/usart_driver
+	url = git@github.com:deda161/usart_driver.git
+[submodule "src/exti_driver"]
+	path = src/exti_driver
+	url = git@github.com:deda161/exti_driver.git

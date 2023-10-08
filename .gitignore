@@ -48,3 +48,6 @@ Backup*
 **/*.dep
 **/*.ewd
 **/*.ewt
+
+# Other files
+.vscode/
